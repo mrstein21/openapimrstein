@@ -34,9 +34,13 @@ const options = {
 		},
 		servers: [
 			{
+				url: "http://192.168.100.10:5000",
+			},
+			{
 				url: "https://openapi.mrstein.web.id",
 			},
 			{
+				
 				url: "http://localhost:5000",
 			},
 			{

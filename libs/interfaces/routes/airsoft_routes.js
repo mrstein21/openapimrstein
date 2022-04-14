@@ -81,7 +81,7 @@ var multerUpload=require('../../infrastructure/multer/upload');
   *          price:
   *            type: int
   *            required: true
-  *            description: Price of Airsoft in Dollar
+  *            description: Price of Airsoft in Rupiah
   *            example: 1000
   *          file:
   *            type: string
@@ -290,7 +290,7 @@ router.delete("/delete/:id",airsoft_controller.DeleteAirsoftRequest);
   *          price:
   *            type: int
   *            required: true
-  *            description: Price of Airsoft in Dollar
+  *            description: Price of Airsoft in Rupiah
   *            example: 1000
   *          file:
   *            type: string
