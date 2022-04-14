@@ -30,7 +30,7 @@ const options = {
 		info: {
 			title: "Mr.Stein Airsoft API",
 			version: "1.0.0",
-			description: "A simple Airsoft API created by Mr.Stein",
+			description: "A simple Airsoft API created by Mr.Stein using Express.js",
 		},
 		servers: [
 			{
