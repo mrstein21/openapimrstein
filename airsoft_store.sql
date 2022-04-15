@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Apr 2022 pada 19.00
+-- Waktu pembuatan: 15 Apr 2022 pada 21.40
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.3.31
 
@@ -48,6 +48,59 @@ INSERT INTO `airsoft` (`id`, `name`, `description`, `price`, `photo`) VALUES
 (38, 'Beretta M9 GBB ', 'Beretta M9 GBB  using Green Gas', 700000, 'beretta_m9.jpg'),
 (39, 'Glock 19  GBB', 'Glock 19 GBB  using Green Gas', 800000, 'glock_19.jpg'),
 (40, 'M14 CYMA AEG', 'M14 AEG Version Made By CYMA', 900000, 'm14_cyma.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `airsoft_trans`
+--
+
+CREATE TABLE `airsoft_trans` (
+  `id` int(11) NOT NULL,
+  `trans_code` varchar(100) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `airsoft_trans`
+--
+
+INSERT INTO `airsoft_trans` (`id`, `trans_code`, `date`) VALUES
+(1, 'TR-193949456', '2022-04-15'),
+(4, 'TR-105798542', '2022-04-15'),
+(5, 'TR-895427216', '2022-04-15'),
+(6, 'TR-523704236', '2022-04-15'),
+(7, 'TR-031214737', '2022-04-15'),
+(8, 'TR-624632122', '2022-04-15'),
+(9, 'TR-143584214', '2022-04-16');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `detail_airsoft_trans`
+--
+
+CREATE TABLE `detail_airsoft_trans` (
+  `id` int(11) NOT NULL,
+  `trans_id` int(11) NOT NULL,
+  `airsoft_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `detail_airsoft_trans`
+--
+
+INSERT INTO `detail_airsoft_trans` (`id`, `trans_id`, `airsoft_id`, `qty`) VALUES
+(1, 1, 33, 1),
+(4, 4, 33, 1),
+(5, 5, 33, 1),
+(6, 6, 33, 1),
+(7, 7, 33, 1),
+(8, 7, 34, 1),
+(9, 8, 33, 1),
+(10, 8, 34, 3),
+(11, 9, 33, 12);
 
 -- --------------------------------------------------------
 
@@ -129,6 +182,18 @@ ALTER TABLE `airsoft`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `airsoft_trans`
+--
+ALTER TABLE `airsoft_trans`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `detail_airsoft_trans`
+--
+ALTER TABLE `detail_airsoft_trans`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
@@ -143,6 +208,18 @@ ALTER TABLE `users`
 --
 ALTER TABLE `airsoft`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT untuk tabel `airsoft_trans`
+--
+ALTER TABLE `airsoft_trans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT untuk tabel `detail_airsoft_trans`
+--
+ALTER TABLE `detail_airsoft_trans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

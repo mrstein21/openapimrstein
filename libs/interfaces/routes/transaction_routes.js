@@ -63,6 +63,7 @@ const transaction_controller=require('../controllers/transaction_controller');
  *           description: Status API Response contains true or false
  *          message:
  *           type: string
+ *           example: Response OK from Server API !
  *           description: Message From API
  *          data:
  *           type: object
