@@ -6,6 +6,11 @@ module.exports=class{
         return data;
     }
 
+    async checkAirsoft(ids){
+        var data=await Airsoft.query().whereIn("id",ids);
+        return data;
+    }
+
     async addAirsoft(data){
         var data=await Airsoft.query().insert(data);
         return data;

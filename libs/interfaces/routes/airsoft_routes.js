@@ -115,15 +115,15 @@ var multerUpload=require('../../infrastructure/multer/upload');
   *        example:
   *         success: false
   *         message: You must upload image file only
-  *     403:
-  *      description: Forbidden Access
+  *     401:
+  *      description: Unauthorized 
   *      content:
   *       application/json:
   *        schema:
   *         $ref: '#components/schemas/Error'
   *        example:
   *         success: false
-  *         message: Forbidden Access
+  *         message: Unauthorized Access
   *     500:
   *      description: Server Error
   *      content:
@@ -179,15 +179,15 @@ router.post("/add",airsoft_controller.AddAirsoftRequest);
  *              description: List of Airsoft
  *              items:
  *               $ref: "#components/schemas/Airsoft"
- *     403:
- *      description: Forbidden Access 
+ *     401:
+ *      description: Unauthorized 
  *      content:
  *       application/json:
  *        schema: 
  *         $refs: "#components/schemas/Error"
  *        example:
  *         success: false
- *         message: Forbidden Access 
+ *         message: Unauthorized Access
  *     500:
  *      description: Server Error
  *      content:
@@ -213,13 +213,7 @@ router.get("/",airsoft_controller.GetAirsoftRequest);
  *       name: id
  *       type: int
  *       example: true
- *       description: ID of Airsoft
- *     - in: header
- *       required: true
- *       name: Authorization
- *       type: string
- *       description: Token from Login API
- *       example: Bearer your_token   
+ *       description: ID of Airsoft  
  *    responses: 
  *     200:
  *      content:
@@ -239,15 +233,15 @@ router.get("/",airsoft_controller.GetAirsoftRequest);
  *           description: Contains List of Airsoft and All Result Count from Database
  *           example: Airsoft has been Deleted
  *          
- *     403:
- *      description: Forbidden Access 
+ *     401:
+ *      description: Unauthorized Access 
  *      content:
  *       application/json:
  *        schema: 
  *         $refs: "#components/schemas/Error"
  *        example:
  *         success: false
- *         message: Forbidden Access
+ *         message: Unauthorized Access
  *     500:
  *      description: Server Error
  *      content:
@@ -323,15 +317,15 @@ router.delete("/delete/:id",airsoft_controller.DeleteAirsoftRequest);
   *       example:
   *        success: false
   *        message: You must upload image file only
-  *    403:
-  *      description: Forbidden Access 
+  *    401:
+  *      description: Unauthorized Access 
   *      content: 
   *       application/json:
   *        schema: 
   *         $refs: "#components/schemas/Error"
   *        example:
   *         success: false
-  *         errors: Forbidden Access 
+  *         errors: Unauthorized Access 
   *    404:
   *      description: Airsoft Not Found 
   *      content:
@@ -387,15 +381,15 @@ router.post("/update",airsoft_controller.EditAirsoftRequest);
  *           description: Item Airsoft
  *           $ref: "#/components/schemas/Airsoft"
  *          
- *     403:
- *      description: Forbidden Access 
+ *     401:
+ *      description: Unauthorized Access
  *      content:
  *       application/json:
  *        schema: 
  *         $refs: "#components/schemas/Error"
  *        example:
  *         success: false
- *         message: Forbidden Access
+ *         message: Unauthorized Access
  *     500:
  *      description: Server Error
  *      content:

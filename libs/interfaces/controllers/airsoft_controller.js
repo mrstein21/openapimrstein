@@ -3,8 +3,6 @@ const airsoft_usecase=new AirsoftUseCase();
 const resultJSON=require('./controller');
 const uploadFile=require('../../infrastructure/multer/upload');
 const {schemaEditAirsoft, schemaTestUpload, schemaPostJSON}=require('../../infrastructure/validator/airsoft_validator');
-const res = require('express/lib/response');
-const req = require('express/lib/request');
 
 module.exports={
     async AddAirsoftRequest(request,response){

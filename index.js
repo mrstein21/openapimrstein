@@ -5,6 +5,8 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'public/')));
 const UserRoute=require('./libs/interfaces/routes/user_routes');
 const AirsoftRoute=require('./libs/interfaces/routes/airsoft_routes');
+const TransactionRoute=require('./libs/interfaces/routes/transaction_routes');
+
 
 
 var bodyParser = require('body-parser');
@@ -54,6 +56,7 @@ const specs = swaggerJsDoc(options);
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 app.use("/airsoft",jwtMiddleware.verify_jwt(),AirsoftRoute);
+app.use("/transaction",jwtMiddleware.verify_jwt(),TransactionRoute);
 app.use("/auth",UserRoute);
 
 app.listen(5000, "0.0.0.0", () =>
