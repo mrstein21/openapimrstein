@@ -22,7 +22,7 @@ var multerUpload=require('../../infrastructure/multer/upload');
  *     price:
  *      type: int
  *      description: Price of An Airsoft in dollar
- *     image:
+ *     photo:
  *      type: string
  *      description: Image of An Airsoft
  *    example:

@@ -95,6 +95,10 @@ const transaction_controller=require('../controllers/transaction_controller');
  *                    type: string
  *                    description: Name of Airsoft
  *                    example: Mosin Nagant
+ *                  photo:
+ *                    type: string
+ *                    description: Photo Name of Airsoft
+ *                    example: Mosin.PNG
  *                  description:
  *                    type: string
  *                    description: Description of Airsoft
