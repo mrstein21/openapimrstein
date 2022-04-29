@@ -6,6 +6,7 @@ var fs = require('fs');
 module.exports=class {
     async addAirsoft(request){
         var data=await airsoft_repository.addAirsoft(request);
+        data.price=parseInt(data.price);
         return data;        
     }
 
@@ -24,7 +25,7 @@ module.exports=class {
     }
 
     async deleteAirsoft(id){
-        var exist=await airsoft_repository.getAirsoftById(request.id);
+        var exist=await airsoft_repository.getAirsoftById(id);
         if(exist==null){
           return null;
         }
